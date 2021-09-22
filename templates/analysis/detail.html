@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %} Detail - {{ block.super }} {% endblock %}
+{% block body %}
+
+	<div class="conatainer-fluid">
+		<div class="row">
+			<div class="col-md-6 offset-lg-2">
+
+				{% if results %}
+					<div class="alert alert-success" role="alert">
+					  <h4 class="alert-heading">Success!</h4>
+					  <p>The table below shows samples that have shared code with <b>"{{ analyzed.file.name }}"</b>.</p>
+					</div>
+					<table class="table table-hover table-bordered">
+					  <thead class="thead-dark table-dark">
+
+						<tr>
+						  <th scope="col">Sample</th>
+						  <th scope="col">Basic Blocks</th>
+						  <th scope="col">Functions</th>
+						</tr>
+					  </thead>
+					  <tbody>
+						{% for result in results %}
+							<tr>
+							  <th scope="row"><a href="https://www.virustotal.com/gui/file/{{ result.File }}">{{ result.File }}</a></th>
+							  <td>{{ result.BasicBlocks }}</td>
+							  <td>{{ result.Functions }}</td>
+							</tr>
+						{% endfor %}
+					  </tbody>
+					</table>
+				{% endif %}
+
+
+
+				{% if failed %}
+					<div class="alert alert-danger" role="alert">
+					  <h4 class="alert-heading">Failed!</h4>
+					  <p>The functions and basic blocks of the given file could not be extracted.</p>
+					</div>
+				{% endif %}
+
+
+				{% if empty %}
+					<div class="alert alert-warning" role="alert">
+					  <h4 class="alert-heading">Shared code not found!</h4>
+					</div>
+				{% endif %}
+
+
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

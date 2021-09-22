@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %} Index - {{ block.super }} {% endblock %}
+
+{% block body %}
+
+	<div class="conatainer">
+		{% for u in uploads %}
+		<div class="row">
+			<div class="col-md-6 offset-md-1">
+				<a href="{{ u.get_from_results }}">{{ u.file.name }}</a><br>
+			</div>
+		</div>
+
+		{% endfor %}
+
+		<div class="row">
+			<div class="col-md-6 offset-md-1">
+				<div class="pagination">
+					<span class="step-links">
+						{% if uploads.has_previous %}
+							<a class="btn btn-primary btn-sm" href="?page={{ uploads.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" role="button">previous</a>
+						{% endif %}
+
+						<span class="current">
+							<b>Page {{ uploads.number }} of {{ uploads.paginator.num_pages }}</b>
+						</span>
+
+						{% if uploads.has_next %}
+							<a class="btn btn-primary btn-sm" href="?page={{ uploads.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}" role="button">next</a>
+						{% endif %}
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

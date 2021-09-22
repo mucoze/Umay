@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ block.super }} {% endblock %}
+
+{% block body %}
+
+
+	<div class="conatainer">
+		<div class="row">
+			<div class="col-md-6 offset-md-2">
+				<form method='POST' enctype="multipart/form-data">
+					{% csrf_token %}
+					<h1>Upload the sample</h1>
+					{{ form.as_p }}<br>
+					<b><p>Once uploaded, the analysis starts automatically.</p></b>
+					<input class="btn btn-success" type='submit' value='Upload', name='fname'>
+					{{ form.name }}
+					</form>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+{% endblock %}
