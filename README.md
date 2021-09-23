@@ -49,6 +49,7 @@ This project provides IoT malware similarity analysis based on shared codes. It 
 ### Prerequisites
 - Python3+
 - [Radare2](https://github.com/radareorg/radare2)	
+  - r2pipe
 
 ### Installation
 
