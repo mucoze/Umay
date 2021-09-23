@@ -25,7 +25,7 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-  - [Create your own dataset](#Create-your-own-dataset)
+  - [Create your own dataset](#create-your-own-dataset)
 - [Contributing](#contributing)
 - [License](#license)
 
