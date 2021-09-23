@@ -7,7 +7,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/mucoze/Umay">
-    <img src="static/img/logo.png" alt="Logo" width="140" height="140">
+    <img src="static/img/logo.png" alt="Logo" width="140" height="100">
   </a>
 
   <h3 align="center">IoT Malware Similarity Analysis Platform</h3>
