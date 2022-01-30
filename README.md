@@ -13,7 +13,7 @@
   <h3 align="center">IoT Malware Similarity Analysis Platform</h3>
 
   <p align="center">
-    <a href="https://umay.xyz/"><strong>View Demo</strong></a>
+    <a><strong>View Demo</strong></a>
   </p>
 </p>
 
